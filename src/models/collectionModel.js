@@ -7,11 +7,14 @@ class CollectionModel {
       orderBy: {
         createdAt: "desc",
       },
+      include: {
+        cards: true,
+      },
     });
 
+    // console.log(colecoes);
 
-
-
+    return colecoes;
   }
 
   // Obter um personagem pelo ID
