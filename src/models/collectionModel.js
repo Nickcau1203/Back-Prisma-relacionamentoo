@@ -10,7 +10,8 @@ class CollectionModel {
     });
 
 
-   
+
+
   }
 
   // Obter um personagem pelo ID
@@ -24,31 +25,21 @@ class CollectionModel {
     return personagem;
   }
 
-  // Criar um novo personagem
+  // Criar um nova coleção
   async create(
-    title,
+    name,
     description,
-    episodes,
-    releaseYear,
-    studio,
-    genres,
-    rating,
-    imageUrl
+    releaseYear
   ) {
-    const newPersonagem = await prisma.personagem.create({
+    const newCollection = await prisma.collection.create({
       data: {
-        title,
+        name,
         description,
-        episodes,
-        releaseYear,
-        studio,
-        genres,
-        rating,
-        imageUrl,
+        releaseYear
       },
     });
 
-    return newPersonagem;
+    return newCollection;
   }
 
   // Atualizar um personagem
